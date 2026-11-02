@@ -438,9 +438,10 @@
     $("hint").innerHTML = G.game.hint;
     const d = gi(id);
     $("myBest").classList.toggle("hide", !(d.b > 0)); $("myBestVal").textContent = d.b || 0;
-    $("topBox").classList.toggle("hide", !(d.t && d.t.length));
-    $("topList").innerHTML = (d.t || []).slice(0, 10).map((r, i) =>
-      `<li class="${i === 0 ? "gold" : ""}"><span>${i + 1}. ${esc(r[0])}</span><b>${Number(r[1]) || 0}</b></li>`).join("");
+    $("topBox").classList.remove("hide");
+    $("topList").innerHTML = (d.t && d.t.length) ? d.t.slice(0, 10).map((r, i) =>
+      `<li class="${i === 0 ? "gold" : ""}"><span>${i + 1}. ${esc(r[0])}</span><b>${Number(r[1]) || 0}</b></li>`).join("")
+      : `<li style="justify-content:center;color:#c9bfd9">Încă nu e nimeni în top. Fii primul! 🏆</li>`;
   }
   function startRound() { showOnly(null); G.game.reset(); G.state = "ready"; }
   function crash() {
