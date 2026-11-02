@@ -1,4 +1,4 @@
-# Venom Fly
+# Jocuri Venom Racers
 
-Jocul Venom Racers pentru botul de Telegram @venomracers_bot.
-Se publică automat cu GitHub Pages (Settings → Pages → Branch: main, / root).
+Venom Fly și Venom Drift, pentru botul de Telegram @venomracers_bot.
+Publicate cu GitHub Pages: https://bnbsolutions.github.io/venom/
