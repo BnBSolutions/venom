@@ -457,10 +457,15 @@
     $("sessBest").textContent = best.s;
     $("newRec").classList.toggle("hide", !(r.s > 0 && r.s === best.s && r.s > (d.b || 0)));
     $("topBestRow").classList.toggle("hide", !(d.b > 0)); $("topBest").textContent = d.b || 0;
-    $("sendBtn").classList.toggle("hide", !inTelegram);
-    $("sendBtn").textContent = `🏆 Trimite scorul ${best.s} în top`;
+    // scorul pleacă automat spre bot doar la record nou (Telegram închide jocul când primește scorul)
+    const record = inTelegram && r.s > 0 && r.s > (d.b || 0) && r.s === best.s;
+    $("sendBtn").classList.add("hide");
+    $("newRec").textContent = record ? "RECORD NOU! Se trimite în top…" : "RECORD NOU!";
+    $("againBtn").classList.toggle("hide", record);
+    document.querySelectorAll("#over .backBtn").forEach(el => el.classList.toggle("hide", record));
     $("outside").classList.toggle("hide", inTelegram);
     showOnly("over");
+    if (record) setTimeout(sendScore, 1400);
   }
   function sendScore() {
     if (!inTelegram) return;
