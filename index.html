@@ -92,7 +92,8 @@
   "use strict";
   // ================================================================ Telegram
   const tg = window.Telegram && window.Telegram.WebApp;
-  const inTelegram = !!(tg && tg.initData);
+  // deschis din butonul de jos al botului, Telegram nu trimite initData; platforma e „unknown” doar în afara Telegram
+  const inTelegram = !!(tg && ((tg.platform && tg.platform !== "unknown") || tg.initData || /tgWebApp/.test(location.hash)));
   if (tg) {
     try { tg.ready(); tg.expand(); } catch (e) {}
     try { if (tg.disableVerticalSwipes) tg.disableVerticalSwipes(); } catch (e) {}
