@@ -1,4 +1,4 @@
-# Jocuri Venom Racers
+# Jocuri Gorillaz Crew
 
-Venom Fly și Venom Drift, pentru botul de Telegram @venomracers_bot.
+Gorillaz Fly și Gorillaz Drift, pentru botul de Telegram Gorillaz Crew.
 Publicate cu GitHub Pages: https://bnbsolutions.github.io/venom/
