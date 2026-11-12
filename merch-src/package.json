@@ -1,0 +1,15 @@
+{
+  "name": "gorillaz-merch",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Magazinul de merch Gorillaz Crew, deschis din botul de Telegram.",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "^6.0.3"
+  }
+}
